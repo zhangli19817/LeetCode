@@ -1,0 +1,56 @@
+//LeetCode 455. 分发饼干（Assign Cookies）
+
+package com.oracle.test001;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class TestAssignCandy {
+
+   public static int compare(int[] a,int[] b){
+
+      int m=0;
+      int n=0;
+      int counter=0;
+
+      //int[] a1=Arrays.copyOf(a,a.length);
+      //int[] b1=Arrays.copyOf(b,b.length);
+
+      Arrays.sort(a);
+      Arrays.sort(b);
+
+      for(int i:a)
+        System.out.print(i+" ");
+      System.out.println("");
+
+      for(int i:b)
+        System.out.print(i+" ");
+
+      System.out.println("");
+      while(n<a.length && m<b.length){
+         if(b[m]>=a[n]){
+            m+=1;
+            n+=1;
+            counter+=1;
+         }
+         else{
+            m+=1;
+         }
+
+      }
+
+      return counter;
+   }
+
+   public static void main(String[] args){
+      int[] a={4,3,2,6};
+      int[] b={3,4,6,5};
+
+      int[] c={4,5,6,7};
+      int[] d={1,2,3,4};
+
+      System.out.println(TestAssignCandy.compare(a,b));
+      System.out.println(TestAssignCandy.compare(c,d));
+   }
+}
